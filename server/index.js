@@ -1,9 +1,16 @@
+require('dotenv').config();
+
+if(!process.env.JANITOR_GITDIR) {
+    console.log("Environment variable 'JANITOR_GITDIR' should be set");
+    process.exit(1);
+}
+
 const Server = require('./server');
 
 Server.setup({
         host: '0.0.0.0',
         port: 8000,
-        workspace: process.env.JANITOR_WORKSPACE
+        workspace: process.env.JANITOR_GITDIR
     })
     .then((server) => {
         return server.start()

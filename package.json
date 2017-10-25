@@ -20,6 +20,7 @@
   "homepage": "https://github.com/m0xx/git-janitor#readme",
   "dependencies": {
     "boom": "^6.0.0",
+    "dotenv": "^4.0.0",
     "hapi": "^16.6.2",
     "joi": "^13.0.1",
     "nodegit": "^0.20.3",

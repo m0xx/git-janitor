@@ -1,5 +1,6 @@
 const Hapi = require('hapi');
-const api = require('./api');
+const janitor = require('./plugins/janitor');
+const api = require('./plugins/api');
 
 function setup({host, port, workspace}) {
     return new Promise((resolve, reject) => {
@@ -10,7 +11,15 @@ function setup({host, port, workspace}) {
             port
         });
 
-        server.register([api({workspace})], (err) => {
+        server.register([
+            {
+                register: janitor,
+                options: {
+                    gitDir: workspace
+                }
+            },
+            api
+            ], (err) => {
 
             if (err) {
                 return reject(err);
