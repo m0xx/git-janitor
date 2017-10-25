@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './client/index.js',
     output: {
-        path: path.resolve('.dist'),
+        path: path.resolve('.dist')
     },
     module: {
         loaders: [
@@ -18,4 +18,4 @@ module.exports = {
             inject: 'body'
         })
     ]
-}
+};
