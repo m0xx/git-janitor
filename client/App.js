@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
-
 class App extends Component {
     render() {
         return (
-            <h1>Git Janitor</h1>
+            <div>
+                <h1>Git Janitor</h1>
+            </div>
         )
     }
 }
