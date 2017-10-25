@@ -1,0 +1,22 @@
+{
+  "name": "git-janitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m0xx/git-janitor.git"
+  },
+  "author": "Maxime Morin <maxime.morin2@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m0xx/git-janitor/issues"
+  },
+  "homepage": "https://github.com/m0xx/git-janitor#readme",
+  "dependencies": {
+    "nodegit": "^0.20.3"
+  }
+}
