@@ -1,13 +1,5 @@
 const Boom = require('boom');
 
-function referenceToBranch(reference) {
-    return {
-        name: reference.name(),
-        shorthand: reference.shorthand(),
-        isRemote: reference.isRemote() > 0
-    };
-}
-
 const routes = [
     {
         method: 'GET',
@@ -17,9 +9,6 @@ const routes = [
 
             return janitor
                 .listBranches()
-                .then(references => {
-                    return references.map(referenceToBranch);
-                })
                 .then(reply)
                 .catch(err => {
                     return Boom.internals(err);
@@ -34,7 +23,6 @@ const routes = [
 
             return janitor
                 .currentBranch()
-                .then(referenceToBranch)
                 .then(reply)
                 .catch(err => {
                     return Boom.internals(err);

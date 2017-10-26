@@ -1,5 +1,7 @@
 .idea
 *.iml
 *.log
+.test
+.dist
 .env
 node_modules

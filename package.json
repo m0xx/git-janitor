@@ -6,7 +6,8 @@
   "scripts": {
     "start:client": "webpack-dev-server",
     "start:server": "nodemon server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --runInBand",
+    "test:watch": "jest --runInBand --watch"
   },
   "repository": {
     "type": "git",
@@ -18,15 +19,27 @@
     "url": "https://github.com/m0xx/git-janitor/issues"
   },
   "homepage": "https://github.com/m0xx/git-janitor#readme",
+  "jest": {
+    "setupFiles": [
+      "./test-setup.js"
+    ],
+    "roots": [
+      "./lib"
+    ],
+    "verbose": true
+  },
   "dependencies": {
     "boom": "^6.0.0",
     "dotenv": "^4.0.0",
+    "fs-extra": "^4.0.2",
     "hapi": "^16.6.2",
     "joi": "^13.0.1",
+    "lodash.differenceby": "^4.8.0",
     "nodegit": "^0.20.3",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -36,6 +49,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "html-webpack-plugin": "^2.30.1",
+    "jest": "^21.2.1",
     "nodemon": "^1.12.1",
     "office-ui-fabric-react": "^5.14.0",
     "webpack": "^3.8.1",
