@@ -6,11 +6,15 @@ const janitor = (server, options, next) => {
     if (!gitDir) {
         return next('gitdir should be defined');
     }
-    Janitor.init({ workspace: gitDir }).then(janitor => {
-        server.expose('janitor', janitor);
+    Janitor.init({ workspace: gitDir })
+        .then(janitor => {
+            server.expose('janitor', janitor);
 
-        next();
-    });
+            next();
+        })
+        .catch(err => {
+            next(err);
+        });
 };
 
 janitor.attributes = {

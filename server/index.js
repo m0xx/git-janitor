@@ -11,8 +11,12 @@ Server.setup({
     host: '0.0.0.0',
     port: 8000,
     workspace: process.env.JANITOR_GITDIR
-}).then(server => {
-    return server.start().then(() => {
-        console.log(`Server running at ${server.info.uri}`);
+})
+    .then(server => {
+        return server.start().then(() => {
+            console.log(`Server running at ${server.info.uri}`);
+        });
+    })
+    .catch(err => {
+        console.log(err);
     });
-});

@@ -17,5 +17,13 @@ module.exports = {
             filename: 'index.html',
             inject: 'body'
         })
-    ]
+    ],
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8000',
+                secure: false
+            }
+        }
+    }
 };
